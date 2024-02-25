@@ -65,6 +65,12 @@ function equal() {
 
         document.form.textarea.value = (nilai / 100);
     } else {
-        document.form.textarea.value = eval(hasil);
+        var infinity = eval(hasil);
+        if (infinity === Infinity) {
+            alert('Semua bilangan dibagi 0 hasilnya tidak terdefinisi”');
+            document.form.textarea.value = '0';
+        } else {
+            document.form.textarea.value = eval(hasil);
+        }
     }
 }
